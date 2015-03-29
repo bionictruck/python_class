@@ -119,12 +119,30 @@
 # print y[2]
 
 
-### Data seperated with characters other than spaces
-x = 'pizza;beer;cake'
-y = x.split()
-print y
-print len(y)
-### By specifying the character to split on the list is returned as desired
-z = x.split(';')
-print z
-print len(z)
+# ### Data seperated with characters other than spaces
+# x = 'pizza;beer;cake'
+# y = x.split()
+# print y
+# print len(y)
+# ### By specifying the character to split on the list is returned as desired
+# z = x.split(';')
+# print z
+# print len(z)
+
+
+### Open the file
+fhand = open('mbox-short.txt')
+### For each line in the file
+for line in fhand:
+    ### Strip off the empty space at the end of each line
+    line = line.rstrip()
+    ### If the line does not start with 'From' skip to the next line
+    if not line.startswith('From '): continue
+    ### Split the line so each word is an item in a list
+    words = line.split()
+    ## print words ## shows the lists
+    ### print the word at id 2
+    print words[2]
+
+
+
