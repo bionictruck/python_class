@@ -5,5 +5,6 @@ if __name__ == '__main__':
     while n > 0:
         total.insert(0, n)
         n = n - 1
+    ### The * removes [{, and sep = removes the spaces
     print(*total, sep='')
         
