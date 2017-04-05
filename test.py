@@ -1,7 +1,23 @@
-x = int(input())
-y = int(input())
-z = int(input())
-n = int(input())
+num_students = int(input())
+roster = []
 
-coordinates = [[i, j, k] for i in range(x + 1) for j in range(y + 1) for k in range(z + 1) if (i + j + k) != n]
-print(coordinates)
+while num_students > 0:
+    name = input()
+    grade = float(input())
+    roster.append([name, grade])
+    num_students -= 1
+
+print(sorted(roster))
+print(sorted(roster, key=lambda name: name[1]))
+
+
+# name_grade.append(['Adam', 87])
+# name_grade.append(['Betty', 90])
+# name_grade.append(['Frank', 85])
+
+# print(sorted(name_grade))
+# name_grade = (sorted(name_grade, key=lambda name: name[1]))
+
+
+# for i in name_grade:
+#     print(name_grade[i][1])
