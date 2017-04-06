@@ -1,23 +1,17 @@
-num_students = int(input())
-roster = []
+### Taking a string and changing a letter in the string
+def mutate_string(string, position, character):
+    ### Convert string to a list
+    l = list(string)
+    ### At the given position, change to the given character
+    l[position] = character
+    ### Join the list back into a string
+    string = ''.join(l)
+    ### Print that shit
+    print(string)
 
-while num_students > 0:
-    name = input()
-    grade = float(input())
-    roster.append([name, grade])
-    num_students -= 1
+### Slice the string, change to the given character at the given postion
+### Add the rest of the string after the added character
+    string = string[:position] + character + string[position+1:]
+    print(string)
 
-print(sorted(roster))
-print(sorted(roster, key=lambda name: name[1]))
-
-
-# name_grade.append(['Adam', 87])
-# name_grade.append(['Betty', 90])
-# name_grade.append(['Frank', 85])
-
-# print(sorted(name_grade))
-# name_grade = (sorted(name_grade, key=lambda name: name[1]))
-
-
-# for i in name_grade:
-#     print(name_grade[i][1])
+mutate_string('Frank Sinatra and the Rat Pack', 14, 's')
